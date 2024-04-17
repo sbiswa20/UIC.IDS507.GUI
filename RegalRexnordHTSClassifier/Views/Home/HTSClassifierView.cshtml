@@ -1,0 +1,229 @@
+﻿
+
+
+<html>
+    <head>
+    <style>
+        body {
+            background-color: lightblue;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .search-container, .results-div {
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-box {
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .search-button {
+            padding: 10px;
+            font-size: 1em;
+            width: auto;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        .results-div {
+            overflow-y: auto;
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 90vw; /* Adjusted to match the search container */
+            height: 50vh; /* Adjust based on your layout needs */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+            max-width: 50vw; /* Max width for li elements */
+            word-wrap: break-word; /* Ensures text wraps inside the li */
+        }
+
+            li:hover {
+                background-color: #e9e9e9;
+                /*background-color: #add8e6; */
+            }
+
+        .li-mousedown {
+            background-color: #add8e6; /*#90ee90; /* Light green for mousedown state, choose any color you like */
+        }
+
+
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .li-clicked {
+            background-color: #add8e6; /* Light blue color for clicked state */
+        }
+
+
+        .button-active {
+            background-color: #4CAF50; /* Green background for active state */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-inactive {
+            background-color: #f44336; /* Red background for inactive state */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: not-allowed; /* The cursor indicates the button is not clickable */
+            opacity: 0.6; /* The button looks faded */
+            pointer-events: none; /* Prevents all click actions on the button */
+        }
+
+
+        /*resizing the containers*/
+        #masterContainer {
+            width: 90vw; /* Match the width of the search-container and results-div */
+            max-width: 1200px; /* Optional: to prevent the container from getting too wide on larger screens */
+            margin: auto; /* Center the master container */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-container, .htscode-container {
+            flex-direction: row; /* Aligns children (textbox and button) side by side */
+            justify-content: center; /* Centers them in the container */
+            flex-wrap: wrap; /* Wraps children to new line if space is insufficient */
+            gap: 10px; /* Adds a gap between children */
+        }
+
+            .search-box, .htscode-container .search-box {
+                flex-grow: 1; /* Allows the textbox to grow and fill available space */
+                max-width: calc(80vw - 20px); /* Adjusts width, -20px accounts for padding and margins */
+            }
+
+            .search-button, .htscode-container button {
+                white-space: nowrap; /* Prevents text inside button from wrapping */
+            }
+
+        .results-div {
+            width: 90vw; /* Matches the width of the search-container and htscode-container */
+            margin-top: 20px; /* Adds space between this div and the search-container above */
+            margin-bottom: 20px; /* Adds space between this div and the htscode-container below */
+        }
+
+        .htscode-container {
+            display: flex;
+            justify-content: space-between; /* This will place the input and button adjacent to each other */
+            gap: 10px; /* Optional: if you want to maintain some space between the elements */
+        }
+
+        /* Style for textboxes with blue border */
+        .search-box {
+            border: 1px solid #0000ff; /* blue border */
+        }
+
+        /* Additional style for the htsCode textbox to make it uneditable */
+        #htsCode {
+            pointer-events: none; /* Disables interactions */
+            background-color: #f0f0f0; /* Light gray background to indicate it's disabled */
+        }
+
+        /* Styles for dynamic color changes based on content length */
+        .htsCode-normal {
+            color: red; /* Normal state with text less than 13 characters */
+            font-weight: normal;
+        }
+
+        .htsCode-full {
+            color: green; /* State when text is exactly 13 characters */
+            font-weight: bold;
+        }
+    </style>
+        <script>
+            
+        </script>
+    <script defer src="~/js/htsclassifier.js"></script>
+    </head>
+        <body>
+            <H1>Product Classifier</H1>
+            <div id="masterContainer">
+                <div class="search-container">
+                    <table width="100%">
+                        <tr>
+                            <td width="80%">
+                                <input class="search-box" id="htsSearch" type="text" placeholder="Enter Search Criteria">
+                            </td>
+                            <td width="10%" align="right">
+                                <button class="search-button" onClick="getHTSTree();">Search</button>
+                            </td>
+                            <td width="10%" align="right">
+                                <button class="search-button" onClick="clearSearch();">Clear</button>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+                <div class="results-div" id="results-div"></div>
+                <div class="search-container">
+                    <table width="100%">
+                        <tr>
+                            <td width="25%">
+                                <input id="htsCode" class="search-box" type="text" placeholder="Classification Code">
+                            </td>
+                            <td width="25%" align="right">
+                                <button class="button-inactive">Publish</button>
+                            </td>
+                            <td width="25%">
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+        </body>
+</html>

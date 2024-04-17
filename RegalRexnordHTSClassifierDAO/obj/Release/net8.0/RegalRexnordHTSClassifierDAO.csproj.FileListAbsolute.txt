@@ -1,0 +1,12 @@
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\bin\Release\net8.0\RegalRexnordHTSClassifierDAO.deps.json
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\bin\Release\net8.0\RegalRexnordHTSClassifierDAO.dll
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\bin\Release\net8.0\RegalRexnordHTSClassifierDAO.pdb
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.csproj.AssemblyReference.cache
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.GeneratedMSBuildEditorConfig.editorconfig
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.AssemblyInfoInputs.cache
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.AssemblyInfo.cs
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.csproj.CoreCompileInputs.cache
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.dll
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\refint\RegalRexnordHTSClassifierDAO.dll
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\RegalRexnordHTSClassifierDAO.pdb
+C:\UICCapstone\RegalRexnordHTSClassifierDAO\obj\Release\net8.0\ref\RegalRexnordHTSClassifierDAO.dll

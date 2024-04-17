@@ -1,0 +1,15 @@
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\bin\Release\net8.0\RegalRexnordHTSClassifierBusiness.deps.json
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\bin\Release\net8.0\RegalRexnordHTSClassifierBusiness.dll
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\bin\Release\net8.0\RegalRexnordHTSClassifierBusiness.pdb
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\bin\Release\net8.0\RegalRexnordHTSClassifierDAO.dll
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\bin\Release\net8.0\RegalRexnordHTSClassifierDAO.pdb
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.csproj.AssemblyReference.cache
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.AssemblyInfoInputs.cache
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.AssemblyInfo.cs
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.csproj.CoreCompileInputs.cache
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRex.83144728.Up2Date
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.dll
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\refint\RegalRexnordHTSClassifierBusiness.dll
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\RegalRexnordHTSClassifierBusiness.pdb
+C:\UICCapstone\RegalRexnordHTSClassifierBusiness\obj\Release\net8.0\ref\RegalRexnordHTSClassifierBusiness.dll

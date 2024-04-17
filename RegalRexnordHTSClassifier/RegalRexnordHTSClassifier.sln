@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegalRexnordHTSClassifier", "RegalRexnordHTSClassifier.csproj", "{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12E0B574-F5A3-453D-9F16-C3ED0145989C} = {12E0B574-F5A3-453D-9F16-C3ED0145989C}
+		{4ED0DA67-15D3-46F4-A860-95608A3E6ECD} = {4ED0DA67-15D3-46F4-A860-95608A3E6ECD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegalRexnordHTSClassifierBusiness", "..\RegalRexnordHTSClassifierBusiness\RegalRexnordHTSClassifierBusiness.csproj", "{12E0B574-F5A3-453D-9F16-C3ED0145989C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegalRexnordHTSClassifierDAO", "..\RegalRexnordHTSClassifierDAO\RegalRexnordHTSClassifierDAO.csproj", "{4ED0DA67-15D3-46F4-A860-95608A3E6ECD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E0B574-F5A3-453D-9F16-C3ED0145989C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E0B574-F5A3-453D-9F16-C3ED0145989C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E0B574-F5A3-453D-9F16-C3ED0145989C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E0B574-F5A3-453D-9F16-C3ED0145989C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED0DA67-15D3-46F4-A860-95608A3E6ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED0DA67-15D3-46F4-A860-95608A3E6ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED0DA67-15D3-46F4-A860-95608A3E6ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED0DA67-15D3-46F4-A860-95608A3E6ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {281D24D7-683A-42A4-975B-7FF944CB571B}
+	EndGlobalSection
+EndGlobal
