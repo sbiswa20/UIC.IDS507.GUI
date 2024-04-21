@@ -1,5 +1,11 @@
+
 /* global variable for last li clicked */
 var lastClickedLi = null;
+
+var incomplete = null;
+var complete = null;
+var toolTip = null;
+var instruction = null;
 
 function cleanEmptyChildren(data) {
     data.forEach(function (item) {
@@ -16,16 +22,19 @@ function renderList(data, root, isRoot = true) {
     if (!isRoot) {
         ul.classList.add('hidden'); // Start with child lists hidden
     }
+
     data.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item.Description;
         li.id = item.Id;
+        li.title = toolTip;
 
 
         li.addEventListener('mousedown', function (event) {
             // Prevent text selection
             event.preventDefault();
             this.classList.add('li-mousedown');
+            //this.classList.add('li-clicked');
         });
 
         li.addEventListener('mouseup', function () {
@@ -71,7 +80,7 @@ function getHTSTree() {
     var useerInput = document.getElementById('htsSearch').value;
 
     if (useerInput.trim().length > 0) {
-        //var restServiceUrl = 'http://localhost:5132/HTSCode/getHTSCodes/Other apparatus';
+        //var restServiceUrl = 'http://localhost:5132/HTSCode/getHTSCodes/';
         var restServiceUrl = 'https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getHTSCodes/';
 
         var searchParam = useerInput
@@ -85,6 +94,21 @@ function getHTSTree() {
 
     }
 
+}
+
+function getFullHTSTree() {
+    try {
+
+        //var allDataServiceUrl = "http://localhost:5132/HTSCode/getAllCodes";
+        var allDataServiceUrl = "https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getAllCodes";
+
+
+        jsonData = getDataFromServiceAndRenderList(allDataServiceUrl, "N/A");
+
+    }
+    catch (ex) {
+        console.info("Exception in function getFullHTSTree() " + ex)
+    }
 }
 
 function cleanContainer() {
@@ -119,7 +143,7 @@ function getDataFromServiceAndRenderList(url, useerInput) {
             if (useerInput.includes(',')) {
                 unfoldToPath(useerInput)
             }
-            else {
+            else if (useerInput != "N/A") {
                 openToMatchedNode(useerInput)
 
             }
@@ -167,8 +191,10 @@ function populateClassificationCode(hts_code) {
         // Apply styles based on the length of the text
         if (hts_code.length == 13) {
             inputElement.className = 'search-box htsCode-full'; // Apply green and bold style
+            document.getElementById('ip_002').textContent = complete;
         } else {
             inputElement.className = 'search-box htsCode-normal'; // Apply red and normal style
+            document.getElementById('ip_002').textContent = incomplete;
         }
 
 
@@ -182,8 +208,10 @@ function populateClassificationCode(hts_code) {
 
 function clearSearch() {
     document.getElementById('htsSearch').value = ''; // Clears the search box
+    document.getElementById('ip_002').textContent = '';
     cleanContainer(); // Clears any results displayed in the results div
-    // Add any other elements you want to reset or clear here
+
+    getFullHTSTree();
 }
 
 
@@ -235,5 +263,127 @@ function revealPath(node) {
     }
 }
 
+function loadConstantValues() {
+    try {
+
+        var url = "https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getAllConfigCodes";
+
+        //var url="http://localhost:5132/HTSCode/getAllConfigCodes";
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Typical action to be performed when the document is ready:
+                var data = xhttp.responseText;
+                //alert("Response = "+data);
+
+                assignConfigData(data);
+
+
+                return data;
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+
+
+        //document.getElementById("ip_001").textContent = "Please select the option from below that fits your product."
+        //document.getElementById("ip_002").textContent = "Please select the option from below that fits your product."
+        //alert('Loadfed');
+
+    }
+    catch (ex) {
+        console.log("Exception in function  loadConstantValues() " + ex);
+    }
+}
+
+function assignConfigData(jsonConfigData) {
+    try {
+
+
+        jsonConfigData = JSON.parse(jsonConfigData);
+        //alert(jsonConfigData);
+
+        incomplete = jsonConfigData.ID_003;
+        complete = jsonConfigData.ID_004;
+        toolTip = jsonConfigData.ID_002;
+        instruction = jsonConfigData.ID_001;
+
+        //alert(jsonConfigData.ID_002);
+
+        document.getElementById("ip_001").textContent = instruction;
+        //document.getElementById("ip_002").textContent = "Please select the option from below that fits your product."
+    }
+    catch (ex) {
+        console.info("Exception in function assignConfigData " + ex);
+    }
+}
+
+
+function loadInitialConfiguration() {
+    try {
+
+        loadConstantValues();
+
+        getFullHTSTree();
+
+
+
+    }
+    catch (ex) {
+        console.log("Exception in function  loadInitialConfiguration() " + ex);
+    }
+}
+
+
+
+window.addEventListener('load', loadInitialConfiguration);
+
+
+async function sendEmail() {
+
+    try {
+
+        var formElement = document.getElementById('emailFrom');
+        var formData = new FormData(formElement);
+
+        const response = await fetch('https://rrhtsclassifierapi.azurewebsites.net/api/sendEmail/send', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to send email');
+        }
+
+        const data = await response.text();  // or response.json()
+        alert('Email sent successfully: ' + data);
+
+        /*
+        // Check if any files were selected
+        if (!formData.has('Attachments') || formData.get('Attachments').size === 0) {
+            // Append an empty file/blob if no attachments are present
+            //formData.append('Attachments', new Blob([], { type: 'application/octet-stream' }), 'empty.file');
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://rrhtsclassifierapi.azurewebsites.net/api/sendEmail/send", true);
+        //xhr.setRequestHeader("Content-Type", "application/octet-stream");
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                alert('Email sent successfully!');
+            } else {
+                alert('Failed to send email: ' + xhr.responseText);
+            }
+        };
+        xhr.send(formData);
+        */
+
+    }
+    catch (ex) {
+        console.error('Error during email send:', ex.message);
+        alert('Error: ' + ex.message);
+    }
+}
 
 //alert('Page Loaded');
