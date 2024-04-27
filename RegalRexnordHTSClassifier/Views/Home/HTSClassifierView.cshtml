@@ -14,72 +14,142 @@
     <script defer src="~/js/htsclassifier.js"></script>
     </head>
     <body>
-    <H1>Product Classifier</H1>
-    <div id="masterContainer">
-        <table>
-            <tr>
+        <h1>Product Classifier</h1>
+        <div id="masterContainer">
+            <table>
+                <tr>
 
-                <td>
-                    <div class="search-container">
-                        <table width="100%">
-                            <tr>
-                                <td width="80%">
-                                    <input class="search-box" id="htsSearch" type="text" placeholder="Enter Search Criteria">
-                                </td>
-                                <td width="10%" align="right">
-                                    <button class="search-button" onClick="getHTSTree();">Search</button>
-                                </td>
-                                <td width="10%" align="right">
-                                    <button class="search-button" onClick="clearSearch();">Clear</button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td width="100%" class="td_info_spn">
-                    <span id="ip_001"></span>
-                </td>
-            </tr>
-            <tr>
+                    <td>
+                        <div class="search-container">
+                            <table width="100%">
+                                <tr>
+                                    <td width="80%">
+                                        <input class="search-box" id="htsSearch" type="text" placeholder="Enter Search Criteria">
+                                    </td>
+                                    <td width="10%" align="right">
+                                        <button class="search-button" onClick="getHTSTree();">Search</button>
+                                    </td>
+                                    <td width="10%" align="right">
+                                        <button class="search-button" onClick="clearSearch();">Clear</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" class="td_info_spn">
+                        <span id="ip_001"></span>
+                    </td>
+                </tr>
+                <tr>
 
-                <td width="100%">
-                    <div class="results-div" id="results-div"></div>
-                </td>
+                    <td width="100%">
+                        <div class="results-div" id="results-div"></div>
+                    </td>
 
-            </tr>
-            <tr>
-                <td>
-                    <div class="search-container">
-                        <table width="100%">
-                            <tr>
-                                <td width="25%">
-                                    <input id="htsCode" class="search-box" type="text" placeholder="Classification Code">
-                                </td>
-                                <td width="25%" align="right">
-                                    <button class="button-inactive" onClick="publishFunction();">Send Email</button>
-                                </td>
-                                <td width="25%">
-                                </td>
-                                <td width="25%">
-                                </td>
-                            </tr>
-                        </table>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="search-container">
+                            <table width="100%">
+                                <tr>
+                                    <td width="25%">
+                                        <input id="htsCode" class="search-box" type="text" placeholder="Classification Code">
+                                    </td>
+                                    <td width="25%" align="right">
+                                        <button class="" onClick="popsendEmail();">Send Email</button>
+                                    </td>
+                                    <td width="25%">
+                                    </td>
+                                    <td width="25%">
+                                    </td>
+                                </tr>
+                            </table>
 
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td width="100%" class="td_info_compincomp_spn">
-                    <span id="ip_002"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-            </tr>
-        </table>
-    </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" class="td_info_compincomp_spn">
+                        <span id="ip_002"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!--<form name="emailFrom" id="emailFrom" enctype="multipart/form-data">
+                            From: <input type="email" name="From" id="From" required><br>
+                            To: <input type="email" namee="To" id="To" required><br>
+                            Subject: <input type="Subject" name="" id="Subject" required><br>
+                            Body: <textarea name="Body" id="Body"></textarea><br>
+                            Attachments: <input type="file" name="Attachments" id="Attachments" multiple><br>
+                            <button type="button" onclick="sendEmail()">Send Email</button>
+                        </form>-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="emailDiv" class="modal">
+            <form name="HTSEmailForm" id="HTSEmailForm" enctype="multipart/form-data">
+                <table width="100%" height="100%">
+                    <tr height="10%">
+                        <td>
+                            From:
+                        </td>
+                        <td>
+                            <input type="email" name="From" id="From" required>
+                        </td>
+                    </tr>
+                    <tr height="10%">
+                        <td>
+                            To:
+                        </td>
+                        <td>
+                            <input type="email" name="To" id="To" required>
+                        </td>
+                    </tr>
+                    <tr height="10%">
+                        <td>
+                            Subject:
+                        </td>
+                        <td>
+                            <input type="Subject" name="Subject" id="Subject" required>
+                        </td>
+                    </tr>
+                    <tr height="40%">
+                        <td>
+                            Body:
+                        </td>
+                        <td>
+                            <textarea name="EmailBody" width="100%" height="100%" class="emailBody"></textarea>
+                        </td>
+                    </tr>
+                    <tr height="10%">
+                        <td>
+                            Attachments:
+                        </td>
+                        <td>
+                            <input type="file" name="Attachments" id="Attachments" multiple>
+                        </td>
+                    </tr>
+                    <tr height="10%">
+
+                        <td width="50%" align="right">
+                            <button type="button" onclick="sendEmail()">Send</button>
+                        </td>
+                        <td width="50%" align="left">
+                            <button type="Close" onclick="closeWindow()">Close</button>
+                        </td>
+                    </tr>
+                    <tr height="10%">
+                        <td>
+                            <span id="emailSentNotification"></span>
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+
+        </div>
     </body>
 </html>

@@ -1,4 +1,3 @@
-
 /* global variable for last li clicked */
 var lastClickedLi = null;
 
@@ -344,7 +343,7 @@ async function sendEmail() {
 
     try {
 
-        var formElement = document.getElementById('emailFrom');
+        var formElement = document.getElementById('HTSEmailForm');
         var formData = new FormData(formElement);
 
         const response = await fetch('https://rrhtsclassifierapi.azurewebsites.net/api/sendEmail/send', {
@@ -386,4 +385,36 @@ async function sendEmail() {
     }
 }
 
-//alert('Page Loaded');
+
+
+function popsendEmail() {
+    try {
+        //alert('In popsendEmail');
+        var ob_emailDiv = document.getElementById('emailDiv');
+        //alert(ob_emailDiv);
+        ob_emailDiv.style.visibility = 'visible';
+        //obemailDiv.style.display = 'flex'; // This will show the modal
+        //obemailDiv.style.zIndex = 20;
+        //alert(ob_emailDiv.style.visibility);
+    }
+    catch (ex) {
+        console.log("Error in popsendEmail() ", ex);
+    }
+
+}
+
+
+function closeWindow() {
+    try {
+        //alert('Close Window');
+        var form = document.getElementById('HTSEmailForm');
+        form.reset();  // Clears the form
+        document.getElementById('emailDiv').style.visibility = 'hidden';
+
+        //ßalert('SUCCESS');
+    }
+    catch (ex) {
+        console.log("Error in closeWindow() ", ex);
+    }
+
+}
