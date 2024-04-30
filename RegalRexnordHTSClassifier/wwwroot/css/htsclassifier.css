@@ -213,6 +213,20 @@ li {
     font-weight: bold; /* Makes the text bold */
 }
 
+#emailSentNotification {
+    display: block; /* Makes the span behave like a block element */
+    min-height: 20px; /* Ensures it has a minimum height */
+    width: 100%; /* Takes full width of its container */
+    background-color: #f0f8ff; /* Light azure blue for visibility */
+    color: #0056b3; /* Dark blue for text color */
+    text-align: left; /* Centers the text inside the span */
+    border: 1px solid #bcd0e7; /* Adds a border */
+    padding: 10px; /* Adds some padding */
+    margin-top: 10px; /* Adds space above the span */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Optional: Adds subtle shadow */
+    font-weight: bold; /* Makes the text bold */
+}
+
 
 /* Ensure table cells fill their container and are flexible for alignment */
 .td_info_spn {

@@ -1,3 +1,16 @@
+var url = "https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getAllConfigCodes";
+//var url="http://localhost:5132/HTSCode/getAllConfigCodes";
+
+
+//var allDataServiceUrl = "http://localhost:5132/HTSCode/getAllCodes";
+var allDataServiceUrl = "https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getAllCodes";
+
+//var restServiceUrl = 'http://localhost:5132/HTSCode/getHTSCodes/';
+var restServiceUrl = 'https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getHTSCodes/';
+
+var emailUrl = 'https://rrhtsclassifierapi.azurewebsites.net/api/sendEmail/send';
+
+
 /* global variable for last li clicked */
 var lastClickedLi = null;
 
@@ -98,8 +111,7 @@ function getHTSTree() {
 function getFullHTSTree() {
     try {
 
-        //var allDataServiceUrl = "http://localhost:5132/HTSCode/getAllCodes";
-        var allDataServiceUrl = "https://rrhtsclassifierapi.azurewebsites.net/HTSCode/getAllCodes";
+
 
 
         jsonData = getDataFromServiceAndRenderList(allDataServiceUrl, "N/A");
@@ -191,9 +203,12 @@ function populateClassificationCode(hts_code) {
         if (hts_code.length == 13) {
             inputElement.className = 'search-box htsCode-full'; // Apply green and bold style
             document.getElementById('ip_002').textContent = complete;
+            document.getElementById('email').className = 'button-active';
+
         } else {
             inputElement.className = 'search-box htsCode-normal'; // Apply red and normal style
             document.getElementById('ip_002').textContent = incomplete;
+            document.getElementById('email').className = 'button-inactive';
         }
 
 
@@ -346,7 +361,9 @@ async function sendEmail() {
         var formElement = document.getElementById('HTSEmailForm');
         var formData = new FormData(formElement);
 
-        const response = await fetch('https://rrhtsclassifierapi.azurewebsites.net/api/sendEmail/send', {
+
+
+        const response = await fetch(emailUrl, {
             method: 'POST',
             body: formData
         });
@@ -356,7 +373,16 @@ async function sendEmail() {
         }
 
         const data = await response.text();  // or response.json()
-        alert('Email sent successfully: ' + data);
+        //alert('Email sent successfully: ' + data);
+
+        if (data.includes('successfully')) {
+            document.getElementById('emailSentNotification').textContent = data;
+            formElement.reset();
+        }
+        else {
+            document.getElementById('emailSentNotification').textContent = data;
+
+        }
 
         /*
         // Check if any files were selected
@@ -381,7 +407,8 @@ async function sendEmail() {
     }
     catch (ex) {
         console.error('Error during email send:', ex.message);
-        alert('Error: ' + ex.message);
+        //alert('Error: ' + ex.message);
+        document.getElementById('emailSentNotification').textContent = ex.message;
     }
 }
 
@@ -396,6 +423,9 @@ function popsendEmail() {
         //obemailDiv.style.display = 'flex'; // This will show the modal
         //obemailDiv.style.zIndex = 20;
         //alert(ob_emailDiv.style.visibility);
+
+        document.getElementById('EmailBody').value = '\n' + document.getElementById('htsCode').value + '\n';
+
     }
     catch (ex) {
         console.log("Error in popsendEmail() ", ex);
@@ -410,6 +440,7 @@ function closeWindow() {
         var form = document.getElementById('HTSEmailForm');
         form.reset();  // Clears the form
         document.getElementById('emailDiv').style.visibility = 'hidden';
+        document.getElementById('emailSentNotification').textContent = "";
 
         //ßalert('SUCCESS');
     }

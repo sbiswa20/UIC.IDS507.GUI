@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\UICCapstone\\RegalRexnordHTSClassifier\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|c:\\uiccapstone\\regalrexnordhtsclassifier\\views\\home\\htsclassifierview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|solutionrelative:views\\home\\htsclassifierview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|c:\\uiccapstone\\regalrexnordhtsclassifier\\wwwroot\\js\\htsclassifier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|solutionrelative:wwwroot\\js\\htsclassifier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|c:\\uiccapstone\\regalrexnordhtsclassifier\\wwwroot\\css\\htsclassifier.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|solutionrelative:wwwroot\\css\\htsclassifier.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|c:\\uiccapstone\\regalrexnordhtsclassifier\\wwwroot\\js\\htsclassifier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|solutionrelative:wwwroot\\js\\htsclassifier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|c:\\uiccapstone\\regalrexnordhtsclassifier\\views\\home\\htsclassifierview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA84717-8B61-4CC4-BC6D-E3A5D1ADA336}|RegalRexnordHTSClassifier.csproj|solutionrelative:views\\home\\htsclassifierview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "HTSClassifierView.cshtml",
               "DocumentMoniker": "C:\\UICCapstone\\RegalRexnordHTSClassifier\\Views\\Home\\HTSClassifierView.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\HTSClassifierView.cshtml",
               "ToolTip": "C:\\UICCapstone\\RegalRexnordHTSClassifier\\Views\\Home\\HTSClassifierView.cshtml",
               "RelativeToolTip": "Views\\Home\\HTSClassifierView.cshtml",
-              "ViewState": "AQIAAJMAAAAAZmZmZqYowJoAAAAHAAAA",
+              "ViewState": "AQIAAEkAAAAAMzMzM7MqwFgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-21T22:14:28.443Z",
               "EditorCaption": ""
@@ -45,20 +45,20 @@
               "RelativeDocumentMoniker": "wwwroot\\css\\htsclassifier.css",
               "ToolTip": "C:\\UICCapstone\\RegalRexnordHTSClassifier\\wwwroot\\css\\htsclassifier.css",
               "RelativeToolTip": "wwwroot\\css\\htsclassifier.css",
-              "ViewState": "AQIAACIBAADAzMzMzEwXwCYBAAAUAAAA",
+              "ViewState": "AQIAABYBAAAADDMzMzPrv0UBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-04-21T22:13:58.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "htsclassifier.js",
               "DocumentMoniker": "C:\\UICCapstone\\RegalRexnordHTSClassifier\\wwwroot\\js\\htsclassifier.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\htsclassifier.js",
               "ToolTip": "C:\\UICCapstone\\RegalRexnordHTSClassifier\\wwwroot\\js\\htsclassifier.js",
               "RelativeToolTip": "wwwroot\\js\\htsclassifier.js",
-              "ViewState": "AQIAAHwBAAAAzczMzMwOwJYBAAAYAAAA",
+              "ViewState": "AQIAADcBAAAAdGZmZmbyv8MBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-04-21T22:13:47.38Z",
               "EditorCaption": ""
